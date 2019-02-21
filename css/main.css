@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Karla:400,700');
+
+/* ===== Variables ===== */
+:root {
+    --font-title: 'Karla', sans-serif;
+    --font-text: 'Inconsolata', sans-serif;
+    --colour-primary: #4998D8;
+    --colour-secondary: #E5DCDD;
+    --colour-secondary-dark: #D8CFD0;
+    --colour-complementary: #B54843;
+    --colour-bright: #FFF;
+    --colour-dark: #705B5D;
+}
+
+/* ===== Base ===== */
+body {
+    font-family: var(--font-text);
+    font-size: 16px;
+    background-color: var(--colour-bright);
+    color: var(--colour-dark);
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+}
+
+p {
+    font-family: var(--font-text);
+    line-height: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+a {
+    color: var(--colour-primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--colour-complementary);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* ===== Specific ===== */
+/* HEADER */
+.header-box {
+    display: inline-block;
+    width: 70%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+    .header .title {
+        margin-top: 10px;
+        
+        background-color: var(--colour-secondary);
+
+        color: var(--colour-primary);
+        font-size: 36px;
+        font-weight: bold;
+
+        border-radius: 7px 7px 0 0;
+    }
+
+    .header .subtitle {
+        margin-top: 5px;
+        margin-bottom: 2vh;
+        
+        background-color: var(--colour-primary);
+
+        color: var(--colour-bright);
+        font-size: 20px;
+
+        border-radius: 0 0 7px 7px;
+    }
+
+/* CONTENT */
+.content {
+    display: inline-block;
+    width: 90%;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+    display: inline-block;
+    width: 70%;
+}
+
+    .footer .button {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    
+    .footer .button a {
+        font-family: var(--font-title);
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--colour-bright);
+        
+        background-color: var(--colour-complementary);
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.5s;
+    }
+
+    .footer .button a:hover {
+        background-color: #d16764;
+    }
+
+/* SOCIAL */
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+    .social .social-list {
+        margin-top: 1.5vh;
+        display: flex;
+        align-content: center;
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .social-list .social-item a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        text-indent: -99999px;
+        background-size: 100% auto;
+        transition: 0.5s;
+    }
+
+        .github {
+            background-image: url(../assets/icons/icons8-github.svg);
+        }
+        .github:hover {
+            background-image: url(../assets/icons/icons8-github-active.svg);
+        }
+
+        .linkedin {
+            background-image: url(../assets/icons/icons8-linkedin.svg);
+        }
+        .linkedin:hover {
+            background-image: url(../assets/icons/icons8-linkedin-active.svg);
+        }
+
+        .twitter {
+            background-image: url(../assets/icons/icons8-twitter.svg);
+        }
+        .twitter:hover {
+            background-image: url(../assets/icons/icons8-twitter-active.svg);
+        }
+
+/* MEDIA-QUERIES */
+@media (min-width: 740px) {
+    html, body {
+        font-size: 22px;
+    }
+    .header-box {
+        width: 60%;
+        padding: 1.5rem;
+    }
+        .header .title {
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        .header .subtitle {
+            font-size: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+    .content {
+        width: 60%;
+        font-size: 17px;
+        margin-bottom: 0.7rem;
+    }
+
+    .footer .button a {
+        padding: 0.7rem;
+    }
+
+        .footer .social {
+            margin-top: 1.5rem;
+        }
+
+        .social .social-list {
+            width: 40%;
+        }
+}
