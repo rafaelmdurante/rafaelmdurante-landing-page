@@ -8,6 +8,7 @@
     --colour-secondary: #E5DCDD;
     --colour-secondary-bright: #F2F2F2;
     --colour-complementary: #B54843;
+    --colour-complementary-bright: #d16764;
     --colour-bright: #FFF;
     --colour-dark: #705B5D;
     --colour-black: #404040;
@@ -19,7 +20,6 @@ body {
     font-size: 16px;
     background-color: var(--colour-black);
     color: var(--colour-secondary);
-    padding: 1rem;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ a {
 }
 
 a:hover {
-    color: var(--colour-complementary);
+    color: var(--colour-complementary-bright);
 }
 
 .bold {
@@ -49,6 +49,14 @@ a:hover {
 
 /* ===== Specific ===== */
 /* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
 .header-box {
     display: inline-block;
     width: 70%;
@@ -87,25 +95,12 @@ a:hover {
             content: '  />';
         }
 
-/* CONTENT */
-.content {
-    display: inline-block;
-    width: 90%;
-    font-size: 15px;
-}
-
-/* FOOTER */
-.footer {
-    display: inline-block;
-    width: 70%;
-}
-
-    .footer .button {
+    .header .button {
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
     
-    .footer .button a {
+    .header .button a {
         font-family: var(--font-title);
         font-size: 18px;
         font-weight: 400;
@@ -117,21 +112,36 @@ a:hover {
         transition: background-color 0.5s;
     }
 
-    .footer .button a:hover {
-        background-color: #d16764;
+    .header .button a:hover {
+        background-color: var(--colour-complementary-bright);
     }
+
+
+/* CONTENT */
+.content {
+    display: inline-block;
+    width: 90%;
+    font-size: 15px;
+}
+
+/* FOOTER */
+.footer {
+    display: inline-block;
+    width: 80%;
+}
 
 /* SOCIAL */
 .social {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
     .social .social-list {
         margin-top: 1.5vh;
         display: flex;
         align-content: center;
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: space-around;
     }
@@ -140,31 +150,15 @@ a:hover {
         width: 40px;
         height: 40px;
         display: flex;
-        text-indent: -99999px;
         background-size: 100% auto;
-        transition: 0.5s;
+        transition: color .5s ease-in-out;
+        font-size: 2rem;
+        color: var(--colour-secondary-bright);
     }
 
-        .github {
-            background-image: url(../assets/icons/icons8-github.svg);
-        }
-        .github:hover {
-            background-image: url(../assets/icons/icons8-github-active.svg);
-        }
-
-        .linkedin {
-            background-image: url(../assets/icons/icons8-linkedin.svg);
-        }
-        .linkedin:hover {
-            background-image: url(../assets/icons/icons8-linkedin-active.svg);
-        }
-
-        .twitter {
-            background-image: url(../assets/icons/icons8-twitter.svg);
-        }
-        .twitter:hover {
-            background-image: url(../assets/icons/icons8-twitter-active.svg);
-        }
+    .social-list .social-item a:hover {
+        color: var(--colour-primary);
+    }
 
 /* MEDIA-QUERIES */
 @media (min-width: 740px) {
@@ -203,5 +197,9 @@ a:hover {
 
         .social .social-list {
             width: 40%;
+        }
+
+        .social-list .social-item a {
+            font-size: 1.5rem;
         }
 }
